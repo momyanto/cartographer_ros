@@ -22,7 +22,7 @@ def generate_launch_description():
         package = 'rviz2',
         executable = 'rviz2',
         on_exit = Shutdown(),
-        arguments = ['-d', FindPackageShare('cartographer_ros').find('cartographer_ros') + '/configuration_files/demo_3d.rviz'],
+        arguments = ['-d', FindPackageShare('cartographer_ros').find('cartographer_ros') + '/configuration_files/cart_3d.rviz'],
         parameters = [{'use_sim_time': True}],
     )
 

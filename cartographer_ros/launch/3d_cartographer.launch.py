@@ -53,9 +53,10 @@ def generate_launch_description():
         arguments = [
             '-configuration_directory', FindPackageShare('cartographer_ros').find('cartographer_ros') + '/configuration_files',
             '-configuration_basename', 'cart_robot.lua'],
-        # remappings = [
-        #     ('points2_1', 'horizontal_laser_3d'),
-        #     ('points2_2', 'vertical_laser_3d')],
+        remappings = [
+            ('points2', 'livox/lidar'),
+            ('imu', 'imu/data_raw'),
+            ],
         output = 'screen'
         )
 
