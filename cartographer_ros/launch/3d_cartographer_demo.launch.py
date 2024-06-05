@@ -26,10 +26,7 @@ def generate_launch_description():
         parameters = [{'use_sim_time': True}],
     )
 
-    ros2_bag_play_cmd = ExecuteProcess(
-        cmd = ['ros2', 'bag', 'play', LaunchConfiguration('bag_filename'), '--clock'],
-        name = 'rosbag_play',
-    )
+    ros2_b/
 
     return LaunchDescription([
         # Launch arguments
