@@ -5,6 +5,7 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node, SetRemap
 from launch_ros.substitutions import FindPackageShare
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from ament_index_python.packages import get_package_share_directory
 import os
 
 def generate_launch_description():
@@ -12,9 +13,9 @@ def generate_launch_description():
     ## ***** Launch arguments *****
     configuration_directory_arg = DeclareLaunchArgument('configuration_directory', default_value = FindPackageShare('cartographer_ros').find('cartographer_ros') + '/configuration_files')
     config_file_arg = DeclareLaunchArgument('config_file', default_value = 'cart_3d_assets_writer.lua')
-    urdf_filename_arg = DeclareLaunchArgument('urdf_filename', default_value = FindPackageShare("robot_description") + '/urdf/cart/cart_real.urdf')
-    bag_filenames_arg = DeclareLaunchArgument('bag_filenames', default_value='')
-    pose_graph_filename_arg = DeclareLaunchArgument('pose_graph_filename', default_value='')
+    urdf_filename_arg = DeclareLaunchArgument('urdf_filename', default_value = get_package_share_directory('robot_description') + '/urdf/cart/cart_real.urdf')
+    bag_filenames_arg = DeclareLaunchArgument('bag_filenames', default_value = '')
+    pose_graph_filename_arg = DeclareLaunchArgument('pose_graph_filename', default_value = '')
 
     cartographer_node = Node(
         package='cartographer_ros',
