@@ -24,12 +24,12 @@ options = {
     -- },
     {
       action = "write_pcd",
-      filename = "map_sampling_0.2.pcd"
+      filename = "map.pcd"
     },
-    {
-      action = "write_ply",
-      filename = "map_sampling_0.2.ply"
-    },
+    -- {
+    --   action = "write_ply",
+    --   filename = "map_sampling_0.2.ply"
+    -- },
     {
       action = "write_ros_map",
       range_data_inserter = {
